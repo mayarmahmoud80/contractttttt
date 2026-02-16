@@ -4,8 +4,10 @@ import { UsersModule } from './user/user.module';
 
 @Module({
   imports: [
-    PrismaModule,  // مهم
+    PrismaModule,
     UsersModule
   ],
 })
+
+
 export class AppModule {}
