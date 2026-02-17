@@ -1,12 +1,13 @@
 import { Injectable} from '@nestjs/common';
 import * as common from '@nestjs/common';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
-import { PrismaService } from '../prisma/prisma.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { PrismaService } from '../../prisma/prisma.service';
+import { CreateUserDto } from '../../modules/user/dto/create-user.dto';
+import { UpdateUserDto } from '../../modules/user/dto/update-user.dto';
+import { IUserService } from './user.service.interface';
 
 @Injectable()
-export class UserService {
+export class UserService implements IUserService {
   constructor(private prisma: PrismaService) {}
 
 async create(dto: CreateUserDto) {
